@@ -29,20 +29,7 @@ const personagens = {
     },
     Labirinto: { senha: "???", itens: ["CARTA.ALINCA.png"] },
     Dalmo: { senha: "irmao", itens: ["CARTA.ALINCA.png"] },
-    Jae: { senha: "silencio", itens: ["CARTA.ALINCA.png"] },
-    Eloy: { senha: "guitarra", itens: ["CARTA.AGUA.png"] },
-    Caio: { senha: "caio", itens: ["CARTA.AGUA.png"] },
-    Franco: { senha: "lukas", itens: ["CARTA.AGUA.png"] },
-    Ale: { senha: "julia", itens: ["CARTA.AGUA.png"] },
-    Cindy: { senha: "assassina", itens: ["CARTA.AGUA.png"] },
-    Pomba: { senha: "confianca", itens: ["CARTA.ALINCA.png"] },
-    Escarlata: { senha: "manipulacao", itens: ["CARTA.ALINCA.png"] },
-    Ana: { senha: "amor", itens: ["CARTA.ALINCA.png"] },
-    Argano: { senha: "coracao", itens: ["CARTA.ALINCA.png"] },
-    Chispa: { senha: "carro", itens: ["CARTA.ALINCA.png"] },
-    Torvo: { senha: "marido", itens: ["CARTA.ALINCA.png"] },
-    Miasma: { senha: "sacrificio", itens: ["CARTA.ALINCA.png"] },
-    Caito: { senha: "sacrificio", itens: ["CARTA.ALINCA.png"] }
+    "Jae Yoon": { senha: "silencio", itens: ["CARTA.ALINCA.png"] }
 };
 
 const TODAS_CARTAS = [
@@ -128,8 +115,6 @@ let tipoUsuario = null;
 
 // Função para pegar o caminho correto da carta
 function getCaminhoCartа(nomeCarta) {
-    // Tenta primeiro com pasta cartas/
-    // Se não encontrar, retorna o nome direto (sem pasta)
     return nomeCarta;
 }
 
