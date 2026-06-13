@@ -126,6 +126,13 @@ const TODAS_CARTAS = [
 let personagemAtual = null;
 let tipoUsuario = null;
 
+// Função para pegar o caminho correto da carta
+function getCaminhoCartа(nomeCarta) {
+    // Tenta primeiro com pasta cartas/
+    // Se não encontrar, retorna o nome direto (sem pasta)
+    return nomeCarta;
+}
+
 // Carregar dados do localStorage
 function carregarDados() {
     const dados = localStorage.getItem('hexatombe_dados');
@@ -266,10 +273,11 @@ function renderizarInventarioPlayer() {
         cartasHTML += `
             <div>
                 <img
-                    src="cartas/${carta}"
+                    src="${getCaminhoCartа(carta)}"
                     alt="${carta}"
                     onclick="removerCartaPlayer(${indice})"
                     title="Clique para remover"
+                    onerror="this.src='cartas/${carta}'"
                 >
             </div>
         `;
@@ -310,10 +318,11 @@ function renderizarInventarioMestre() {
         cartasHTML += `
             <div style="position: relative;">
                 <img
-                    src="cartas/${carta}"
+                    src="${getCaminhoCartа(carta)}"
                     alt="${carta}"
                     onclick="removerCartaMestre(${indice})"
                     title="Clique para remover"
+                    onerror="this.src='cartas/${carta}'"
                 >
                 <div style="position: absolute; top: 5px; right: 5px; background: rgba(255, 107, 107, 0.9); color: white; padding: 5px 10px; border-radius: 5px; font-size: 0.8em; cursor: pointer;" onclick="removerCartaMestre(${indice})">✕</div>
             </div>
@@ -350,10 +359,11 @@ function mostrarAdicionarCartaMestre() {
     TODAS_CARTAS.forEach(carta => {
         lista += `
             <img
-                src="cartas/${carta}"
+                src="${getCaminhoCartа(carta)}"
                 alt="${carta}"
                 onclick="adicionarCartaMestre('${carta}')"
                 title="Clique para adicionar"
+                onerror="this.src='cartas/${carta}'"
             >
         `;
     });
